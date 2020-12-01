@@ -11,7 +11,7 @@ const getRandomNumber = document.getElementById('getRandomNumber') // input
 
     , clearContent = () => getRandomNumber.value = '' //每次输入完成之后清空input的内容
 // pc点击
-getSubmit.addEventListener('click', judge, false)
+//getSubmit.addEventListener('click', judge, false)
 // mobile点击
 getSubmit.addEventListener('touchstart', judge, false)
 //检测用户输入之后变化
