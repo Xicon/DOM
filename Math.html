@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math内置对象</title>
+    <style>
+        :root {
+            --ft-white: rgb(255, 255, 255);
+            --lr-color: #e66465;
+            --rg-color: #9198e5;
+            --bc-blak: rgb(0, 0, 0);
+            --correct: pink;
+            --blue: powderblue;
+            --warn: yellow;
+            --red: red;
+            --bg: #9198e5;
+
+            --width: 300px;
+            --height: 30px;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--ft-white);
+
+        }
+
+        body, aside {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        /* 输入框状态 */
+        input {
+            outline: none;
+            border: none;
+            border-bottom: 2px solid var(--blue);
+            margin-bottom: 10px;
+            width: var(--width);
+            height: var(--height);
+            background-color: transparent;
+        }
+
+        input::-webkit-input-placeholder {
+            color: hotpink;
+        }
+
+        input::-ms-input-placeholder {
+            color: hotpink;
+        }
+
+        input::-moz-placeholder {
+            color: hotpink;
+        }
+
+        /* 按钮交互状态 */
+        button {
+            width: var(--width);
+            height: var(--height);
+            cursor: pointer;
+            display: block;
+            border: 1px solid var(--blue);
+            outline: none;
+            margin-bottom: 10px;
+            transition: all 1s ease;
+            background-color: #9198e5;
+        }
+
+        /* 按钮交互状态 */
+        button:hover {
+
+            border: 1px solid var(--blue);
+            animation: color 1s ease forwards;
+            background: linear-gradient(90deg, var(--lr-color) 30%, var(--warn) 50%, var(--rg-color))
+        }
+
+        @keyframes color {
+            from {
+                background: linear-gradient(0deg, var(--lr-color) 30%, var(--warn) 50%, var(--rg-color))
+            }
+            25% {
+                background: linear-gradient(25deg, var(--lr-color) 30%, var(--warn) 50%, var(--rg-color))
+            }
+            50% {
+                background: linear-gradient(50deg, var(--lr-color) 30%, var(--warn) 50%, var(--rg-color))
+            }
+            75% {
+                background: linear-gradient(75deg, var(--lr-color) 30%, var(--warn) 50%, var(--rg-color))
+            }
+            to {
+                background: linear-gradient(90deg, var(--lr-color) 30%, var(--warn) 50%, var(--rg-color))
+            }
+        }
+
+
+        /* 输出 */
+        code {
+            display: block;
+            width: calc(var(--width));
+            height: var(--height);
+            line-height: var(--height);
+            text-align: center;
+            background-color: var(--bc-blak);
+            border: 1px solid var(--bg);
+        }
+
+        /* 事件反应状态 */
+        .default,
+        .correct,
+        .error,
+        .warn {
+            transition: all 0.5s ease;
+
+        }
+
+        .default {
+            background-color: var(--correct)
+        }
+
+        .correct {
+            background-color: var(--blue)
+        }
+
+        .error {
+            background-color: var(--red)
+        }
+
+        .warn {
+            background-color: var(--warn)
+        }
+
+    </style>
+</head>
+<body>
+
+<aside>
+
+    <label>
+        <input
+                id="getRandomNumber"
+                name="input"
+                type="text"
+                placeholder="输入一个1-10之间的数字,猜一猜它是哪个数字?"
+        >
+    </label>
+
+    <button
+            id="getSubmit"
+    >提交
+    </button>
+
+    <code
+            id="answer"
+            class="default"
+    >请在输入框输入答案
+    </code>
+
+</aside>
+<script src="JavaS.js" type="application/javascript"></script>
+<noscript>你的浏览器版本不支持/未启用 'JavaScript' 引擎</noscript>
+</body>
+</html>
